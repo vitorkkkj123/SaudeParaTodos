@@ -260,3 +260,33 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+
+/* ==========================================================================
+   GERENCIADOR DE CONSENTIMENTO DE COOKIES (LGPD)
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const bannerCookies = document.getElementById("banner-cookies");
+  const btnAceitar = document.getElementById("btn-aceitar-cookies");
+  const btnRejeitar = document.getElementById("btn-rejeitar-cookies");
+
+  const consentimento = localStorage.getItem("consentimento_cookies");
+
+  // Exibe o banner apenas se o usuário ainda não tiver respondido
+  if (!consentimento && bannerCookies) {
+    bannerCookies.classList.remove("oculto");
+  }
+
+  if (btnAceitar) {
+    btnAceitar.addEventListener("click", () => {
+      localStorage.setItem("consentimento_cookies", "todos");
+      bannerCookies.classList.add("oculto");
+    });
+  }
+
+  if (btnRejeitar) {
+    btnRejeitar.addEventListener("click", () => {
+      localStorage.setItem("consentimento_cookies", "essenciais");
+      bannerCookies.classList.add("oculto");
+    });
+  }
+});

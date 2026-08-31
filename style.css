@@ -909,3 +909,131 @@ h3 { font-size: 1.25rem; }
 .alto-contraste :focus-visible {
   outline-color: #FFFFFF !important;
 }
+
+/* ==========================================================================
+   BANNER DE COOKIES (LGPD)
+   ========================================================================== */
+.banner-cookies {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0f3d36;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  border-top: 2px solid #28a745;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.banner-cookies.oculto {
+  display: none !important;
+}
+
+.banner-cookies__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .banner-cookies__container {
+    flex-direction: row;
+  }
+}
+
+.banner-cookies__texto p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.banner-cookies__link {
+  color: #a3e635;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.banner-cookies__link:hover,
+.banner-cookies__link:focus-visible {
+  color: #ffffff;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.banner-cookies__botoes {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .banner-cookies__botoes {
+    width: auto;
+  }
+}
+
+.botao-cookie {
+  flex: 1;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.botao-cookie--primario {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.botao-cookie--primario:hover {
+  background-color: #218838;
+}
+
+.botao-cookie--secundario {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.botao-cookie--secundario:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.botao-cookie:focus-visible {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+}
+
+/* Compatibilidade com Alto Contraste */
+body.alto-contraste .banner-cookies {
+  background-color: #000000;
+  color: #ffff00;
+  border-top: 3px solid #ffff00;
+}
+
+body.alto-contraste .banner-cookies__link {
+  color: #00ffff;
+}
+
+body.alto-contraste .botao-cookie--primario {
+  background-color: #ffff00;
+  color: #000000;
+  border-color: #ffff00;
+}
+
+body.alto-contraste .botao-cookie--secundario {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #ffffff;
+}
