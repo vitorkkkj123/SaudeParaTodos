@@ -1,21 +1,36 @@
-const CACHE_NAME = 'saude-para-todos-v2';
-const RECURSOS_CACHE = [
+const CACHE_NAME = 'saude-para-todos-v3';
+const ASSETS = [
   './',
   './index.html',
   './privacidade.html',
+  './termos.html',
   './style.min.css',
   './script.min.js',
   './manifest.json'
 ];
 
-self.addEventListener('install', (evento) => {
-  evento.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(RECURSOS_CACHE))
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
   );
+  self.skipWaiting();
 });
 
-self.addEventListener('fetch', (evento) => {
-  evento.respondWith(
-    caches.match(evento.request).then((resposta) => resposta || fetch(evento.request))
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(
+        keys.map((key) => {
+          if (key !== CACHE_NAME) return caches.delete(key);
+        })
+      )
+    )
+  );
+  self.clients.claim();
+});
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => response || fetch(event.request))
   );
 });
