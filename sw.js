@@ -1,9 +1,6 @@
-const CACHE_NAME = 'saude-para-todos-v3';
+const CACHE_NAME = 'saude-para-todos-v4';
 const ASSETS = [
   './',
-  './index.html',
-  './privacidade.html',
-  './termos.html',
   './style.min.css',
   './script.min.js',
   './manifest.json'
@@ -30,7 +27,22 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  // Ignora requisições que não sejam GET
+  if (event.request.method !== 'GET') return;
+
+  // Para navegação entre páginas HTML, busca direto na rede permitindo redirects
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match('./'))
+    );
+    return;
+  }
+
+  // Para assets (CSS, JS, imagens), tenta o cache e depois a rede
   event.respondWith(
-    caches.match(event.request).then((response) => response || fetch(event.request))
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) return cachedResponse;
+      return fetch(event.request);
+    })
   );
 });
