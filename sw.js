@@ -1,4 +1,4 @@
-const CACHE_NAME = 'saude-para-todos-v5';
+const CACHE_NAME = 'saude-para-todos-v6';
 const ASSETS = [
   './',
   './style.min.css',

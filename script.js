@@ -4,7 +4,7 @@
    1) Tamanho de fonte (A- / A / A+) com limites seguros
    2) Modo Alto Contraste (com aria-pressed)
    3) Persistência das preferências via localStorage
-   4) Menu de navegação responsivo (aria-expanded)
+   4) Menu de navegação responsivo acessível (aria-expanded)
    5) Integração do formulário com Google Sheets e feedback acessível
    ========================================================================== */
 
@@ -18,8 +18,8 @@
   const CHAVE_FONTE = "saudeParaTodos:tamanhoFonte";
   const CHAVE_CONTRASTE = "saudeParaTodos:altoContraste";
 
-  const TAMANHO_MINIMO = 87.5;   // 87.5% (~14px) — limite seguro mínimo
-  const TAMANHO_MAXIMO = 150;    // 150% (~24px) — limite seguro máximo
+  const TAMANHO_MINIMO = 87.5;   // 87.5% (~14px)
+  const TAMANHO_MAXIMO = 150;    // 150% (~24px)
   const TAMANHO_PADRAO = 100;    // 100% (~16px)
   const PASSO = 10;              // incremento/decremento por clique (%)
 
@@ -110,23 +110,38 @@
      3) MENU DE NAVEGAÇÃO RESPONSIVO
      ================================================================== */
   if (navToggle && navPrincipal) {
-    navToggle.addEventListener("click", function () {
+    function fecharMenu() {
+      navToggle.setAttribute("aria-expanded", "false");
+      navPrincipal.classList.remove("nav-principal--aberto", "ativo");
+    }
+
+    navToggle.addEventListener("click", function (evento) {
+      evento.stopPropagation();
       const expandido = navToggle.getAttribute("aria-expanded") === "true";
-      navToggle.setAttribute("aria-expanded", String(!expandido));
-      navPrincipal.classList.toggle("nav-principal--aberto", !expandido);
+      const novoEstado = !expandido;
+      navToggle.setAttribute("aria-expanded", String(novoEstado));
+      navPrincipal.classList.toggle("nav-principal--aberto", novoEstado);
+      navPrincipal.classList.toggle("ativo", novoEstado);
     });
 
+    // Fecha o menu ao clicar em links internos
     navPrincipal.addEventListener("click", function (evento) {
-      if (evento.target.tagName === "A") {
-        navToggle.setAttribute("aria-expanded", "false");
-        navPrincipal.classList.remove("nav-principal--aberto");
+      if (evento.target.closest("a")) {
+        fecharMenu();
       }
     });
 
+    // Fecha se o usuário clicar fora do menu
+    document.addEventListener("click", function (evento) {
+      if (!navPrincipal.contains(evento.target) && !navToggle.contains(evento.target)) {
+        fecharMenu();
+      }
+    });
+
+    // Tecla ESC para acessibilidade
     document.addEventListener("keydown", function (evento) {
       if (evento.key === "Escape" && navToggle.getAttribute("aria-expanded") === "true") {
-        navToggle.setAttribute("aria-expanded", "false");
-        navPrincipal.classList.remove("nav-principal--aberto");
+        fecharMenu();
         navToggle.focus();
       }
     });
@@ -253,6 +268,9 @@
   iniciar();
 })();
 
+/* ==================================================================
+   6) SERVICE WORKER (PWA)
+   ================================================================== */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js').catch((err) => {
@@ -260,33 +278,3 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-
-/* ==========================================================================
-   GERENCIADOR DE CONSENTIMENTO DE COOKIES (LGPD)
-   ========================================================================== */
-document.addEventListener("DOMContentLoaded", () => {
-  const bannerCookies = document.getElementById("banner-cookies");
-  const btnAceitar = document.getElementById("btn-aceitar-cookies");
-  const btnRejeitar = document.getElementById("btn-rejeitar-cookies");
-
-  const consentimento = localStorage.getItem("consentimento_cookies");
-
-  // Exibe o banner apenas se o usuário ainda não tiver respondido
-  if (!consentimento && bannerCookies) {
-    bannerCookies.classList.remove("oculto");
-  }
-
-  if (btnAceitar) {
-    btnAceitar.addEventListener("click", () => {
-      localStorage.setItem("consentimento_cookies", "todos");
-      bannerCookies.classList.add("oculto");
-    });
-  }
-
-  if (btnRejeitar) {
-    btnRejeitar.addEventListener("click", () => {
-      localStorage.setItem("consentimento_cookies", "essenciais");
-      bannerCookies.classList.add("oculto");
-    });
-  }
-});
