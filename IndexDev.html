@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PJQ35VRG');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saúde para Todos | Clínica de Especialidades Acessível</title>
+  <meta name="description" content="Clínica de Especialidades Saúde para Todos: atendimento acessível e humanizado para idosos e pessoas com deficiência.">
+  
+  <!-- Favicon SVG Inline -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23145C52'/%3E%3Cpath d='M41 22h18v19h19v18H59v19H41V59H22V41h19V22z' fill='%23FFFFFF'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.min.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#145C52">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJQ35VRG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Skip Link: visível apenas via foco de teclado -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- ===================== BARRA DE ACESSIBILIDADE ===================== -->
+  <div class="barra-acessibilidade" role="region" aria-label="Ferramentas de acessibilidade">
+    <div class="barra-acessibilidade__container">
+      <span class="barra-acessibilidade__rotulo" id="rotulo-fonte">Tamanho do texto:</span>
+
+      <div class="barra-acessibilidade__grupo" role="group" aria-labelledby="rotulo-fonte">
+        <button type="button" id="btn-diminuir-fonte" class="btn-acessibilidade" aria-label="Diminuir tamanho da fonte">
+          A<span aria-hidden="true">-</span>
+        </button>
+        <button type="button" id="btn-resetar-fonte" class="btn-acessibilidade" aria-label="Redefinir tamanho da fonte para o padrão">
+          A
+        </button>
+        <button type="button" id="btn-aumentar-fonte" class="btn-acessibilidade" aria-label="Aumentar tamanho da fonte">
+          A<span aria-hidden="true">+</span>
+        </button>
+      </div>
+
+      <button type="button" id="btn-alto-contraste" class="btn-acessibilidade btn-acessibilidade--contraste" aria-pressed="false">
+        <span aria-hidden="true">◐</span> Modo Alto Contraste
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================== CABEÇALHO / NAVEGAÇÃO ===================== -->
+  <header class="cabecalho">
+    <div class="cabecalho__container">
+      <a href="#inicio" class="cabecalho__logo" aria-label="Saúde para Todos, página inicial">
+        <span aria-hidden="true">✚</span> Saúde <strong>para Todos</strong>
+      </a>
+
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-principal">
+        <span class="sr-only">Abrir menu de navegação</span>
+        <span aria-hidden="true" class="nav-toggle__icone"></span>
+      </button>
+
+      <nav id="nav-principal" class="nav-principal" aria-label="Navegação principal">
+        <ul class="nav-principal__lista">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#equipe">Corpo Clínico</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+          <li><a href="#contato" class="nav-principal__cta">Agendar Consulta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- ===================== HERO / APRESENTAÇÃO ===================== -->
+    <section id="inicio" class="hero" aria-labelledby="titulo-hero">
+      <div class="hero__container">
+        <div class="hero__texto">
+          <p class="hero__eyebrow">Cuidado acessível, do agendamento à consulta</p>
+          <h1 id="titulo-hero">Atendimento médico pensado para <span class="hero__destaque">todas as pessoas</span></h1>
+          <p class="hero__descricao">
+            A Clínica Saúde para Todos oferece estrutura sem barreiras, equipe preparada
+            e comunicação clara para idosos e pessoas com deficiência. Aqui, acessibilidade
+            não é um detalhe — é a base do nosso cuidado.
+          </p>
+          <div class="hero__acoes">
+            <a href="#contato" class="botao botao--primario">Agendar minha consulta</a>
+            <a href="#especialidades" class="botao botao--secundario">Ver especialidades</a>
+          </div>
+          <ul class="hero__selos" aria-label="Diferenciais de acessibilidade da clínica">
+            <li><span aria-hidden="true">♿</span> Estrutura 100% acessível</li>
+            <li><span aria-hidden="true">🧏</span> Atendimento em Libras</li>
+            <li><span aria-hidden="true">🚗</span> Vagas de estacionamento reservadas</li>
+          </ul>
+        </div>
+        <div class="hero__imagem">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=900&fit=crop"
+               alt="Profissional de saúde segurando a mão de uma paciente idosa em cadeira de rodas, ambas sorrindo na recepção da clínica"
+               width="800" height="900" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MENSAGEM DO DIRETOR MÉDICO ===================== -->
+    <section id="diretor" class="diretor" aria-labelledby="titulo-diretor">
+      <div class="secao__container diretor__container">
+        <div class="diretor__foto">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&h=560&fit=crop"
+               alt="Retrato do Dr. Carlos Eduardo, diretor médico da clínica, sorrindo em ambiente acolhedor"
+               width="500" height="560" loading="lazy">
+        </div>
+        <div class="diretor__texto">
+          <span class="aspas-decorativa" aria-hidden="true">&ldquo;</span>
+          <h2 id="titulo-diretor">Uma palavra do nosso diretor</h2>
+          <blockquote class="diretor__citacao">
+            <p>
+              Fundamos a Saúde para Todos com um compromisso simples: nenhum paciente deve
+              se sentir invisível dentro de uma clínica. Cada rampa, cada intérprete de Libras
+              e cada minuto extra de conversa fazem parte do nosso jeito de cuidar. Aqui,
+              dignidade e atenção vêm antes de qualquer protocolo.
+            </p>
+          </blockquote>
+          <p class="diretor__assinatura">
+            <strong>Dr. Carlos Eduardo Nogueira</strong><br>
+            Diretor Médico — CRM 09876
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ESPECIALIDADES ===================== -->
+    <section id="especialidades" class="especialidades" aria-labelledby="titulo-especialidades">
+      <div class="secao__container">
+        <h2 id="titulo-especialidades">Nossas Especialidades</h2>
+        <p class="secao__intro">Equipe multidisciplinar dedicada às necessidades de cada fase da vida.</p>
+
+        <div class="grade-cards">
+          <article class="card">
+            <div class="card__icone" aria-hidden="true">🦴</div>
+            <h3>Geriatria</h3>
+            <p>Cuidado integral com a saúde da pessoa idosa, prevenção de quedas e acompanhamento de doenças crônicas.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__icone" aria-hidden="true">🧠</div>
+            <h3>Neurologia</h3>
+            <p>Diagnóstico e tratamento de condições neurológicas, incluindo Alzheimer, Parkinson e AVC.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__icone" aria-hidden="true">🦿</div>
+            <h3>Ortopedia e Reabilitação</h3>
+            <p>Tratamento de mobilidade reduzida, próteses, órteses e reabilitação física pós-cirúrgica.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__icone" aria-hidden="true">👁️</div>
+            <h3>Oftalmologia</h3>
+            <p>Exames de baixa visão, catarata e acompanhamento oftalmológico com equipamentos adaptados.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__icone" aria-hidden="true">🦻</div>
+            <h3>Fonoaudiologia</h3>
+            <p>Avaliação auditiva, adaptação de próteses auditivas e terapia da fala e deglutição.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__icone" aria-hidden="true">💬</div>
+            <h3>Psicologia</h3>
+            <p>Suporte emocional para pacientes e familiares, com escuta acolhedora e comunicação adaptada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GALERIA DE ACOLHIMENTO ===================== -->
+    <section id="acolhimento" class="galeria" aria-labelledby="titulo-galeria">
+      <div class="secao__container">
+        <h2 id="titulo-galeria">Cuidado que se vê no dia a dia</h2>
+        <p class="secao__intro">Momentos reais da nossa rotina — porque acessibilidade também é afeto.</p>
+
+        <div class="grade-galeria">
+          <figure class="galeria__item">
+            <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=600&h=500&fit=crop"
+                 alt="Close das mãos entrelaçadas de uma médica e uma paciente idosa durante consulta"
+                 width="600" height="500" loading="lazy">
+            <figcaption>Escuta próxima, mão a mão</figcaption>
+          </figure>
+
+          <figure class="galeria__item">
+            <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&h=500&fit=crop"
+                 alt="Fisioterapeuta auxiliando paciente idoso a caminhar com apoio, ambos concentrados no exercício"
+                 width="600" height="500" loading="lazy">
+            <figcaption>Reabilitação com apoio constante</figcaption>
+          </figure>
+
+          <figure class="galeria__item">
+            <img src="https://images.unsplash.com/photo-1580281657702-257584239a55?w=600&h=500&fit=crop"
+                 alt="Recepcionista sorridente auxiliando um paciente cadeirante na chegada à recepção da clínica"
+                 width="600" height="500" loading="lazy">
+            <figcaption>Recepção atenta a cada detalhe</figcaption>
+          </figure>
+
+          <figure class="galeria__item">
+            <img src="https://images.unsplash.com/photo-1576765608866-5b51046452be?w=600&h=500&fit=crop"
+                 alt="Enfermeira ajustando com cuidado a prótese auditiva de um paciente idoso"
+                 width="600" height="500" loading="lazy">
+            <figcaption>Atenção aos pequenos ajustes</figcaption>
+          </figure>
+        </div>
+
+        <div class="galeria__cta">
+          <a href="#contato" class="botao botao--primario">Agendar um atendimento humanizado</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CORPO CLÍNICO ===================== -->
+    <section id="equipe" class="equipe" aria-labelledby="titulo-equipe">
+      <div class="secao__container">
+        <h2 id="titulo-equipe">Corpo Clínico</h2>
+        <p class="secao__intro">Profissionais experientes e capacitados em comunicação acessível.</p>
+
+        <div class="grade-cards grade-cards--equipe">
+          <article class="card card--medico">
+            <img class="card__foto" src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&h=300&fit=crop"
+                 alt="Retrato da Dra. Marina Costa, médica geriatra" width="300" height="300" loading="lazy">
+            <h3>Dra. Marina Costa</h3>
+            <p class="card__cargo">Geriatra — CRM 12345</p>
+            <p>Mais de 15 anos de experiência no cuidado com pacientes idosos.</p>
+          </article>
+
+          <article class="card card--medico">
+            <img class="card__foto" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=300&fit=crop"
+                 alt="Retrato do Dr. Ricardo Alves, médico neurologista" width="300" height="300" loading="lazy">
+            <h3>Dr. Ricardo Alves</h3>
+            <p class="card__cargo">Neurologista — CRM 23456</p>
+            <p>Especialista em doenças neurodegenerativas e reabilitação cognitiva.</p>
+          </article>
+
+          <article class="card card--medico">
+            <img class="card__foto" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop"
+                 alt="Retrato da Dra. Helena Souza, fonoaudióloga" width="300" height="300" loading="lazy">
+            <h3>Dra. Helena Souza</h3>
+            <p class="card__cargo">Fonoaudióloga — CRFa 34567</p>
+            <p>Atendimento especializado em comunicação e adaptação de próteses auditivas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DEPOIMENTOS ===================== -->
+    <section id="depoimentos" class="depoimentos" aria-labelledby="titulo-depoimentos">
+      <div class="secao__container">
+        <h2 id="titulo-depoimentos">Histórias de quem confia na gente</h2>
+        <p class="secao__intro">Relatos reais de pacientes e familiares sobre a experiência na nossa clínica.</p>
+
+        <div class="grade-depoimentos">
+          <article class="depoimento">
+            <span class="depoimento__aspas" aria-hidden="true">&ldquo;</span>
+            <blockquote>
+              <p>Meu pai usa cadeira de rodas e, pela primeira vez, ele não precisou de ajuda
+                para entrar em um consultório sozinho. Isso mudou a autoestima dele.</p>
+            </blockquote>
+            <figure class="depoimento__autor">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=160&h=160&fit=crop"
+                   alt="Retrato de Josefina, 74 anos, sorrindo" width="160" height="160" loading="lazy">
+              <figcaption>
+                <strong>Josefina R.</strong>
+                <span>Paciente de Geriatria</span>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="depoimento">
+            <span class="depoimento__aspas" aria-hidden="true">&ldquo;</span>
+            <blockquote>
+              <p>A intérprete de Libras acompanhou toda a consulta da minha mãe. Foi a primeira
+                vez que ela entendeu, sozinha, tudo o que o médico explicou.</p>
+            </blockquote>
+            <figure class="depoimento__autor">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=160&h=160&fit=crop"
+                   alt="Retrato de Anderson, filho de paciente, sorrindo" width="160" height="160" loading="lazy">
+              <figcaption>
+                <strong>Anderson M.</strong>
+                <span>Familiar de paciente</span>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="depoimento">
+            <span class="depoimento__aspas" aria-hidden="true">&ldquo;</span>
+            <blockquote>
+              <p>Com baixa visão, sempre tive dificuldade em clínicas grandes. Aqui, um funcionário
+                me acompanhou do estacionamento até a sala, sem eu precisar pedir.</p>
+            </blockquote>
+            <figure class="depoimento__autor">
+              <img src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?w=160&h=160&fit=crop"
+                   alt="Retrato de Beatriz, 68 anos, sorrindo" width="160" height="160" loading="lazy">
+              <figcaption>
+                <strong>Beatriz A.</strong>
+                <span>Paciente de Oftalmologia</span>
+              </figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONVÊNIOS ACEITOS ===================== -->
+    <section id="convenios" class="convenios" aria-labelledby="titulo-convenios">
+      <div class="secao__container">
+        <h2 id="titulo-convenios">Convênios Aceitos</h2>
+        <p class="secao__intro">Trabalhamos com os principais planos de saúde do país.</p>
+
+        <ul class="lista-convenios">
+          <li>Unimed</li>
+          <li>Bradesco Saúde</li>
+          <li>SulAmérica</li>
+          <li>Amil</li>
+          <li>Hapvida</li>
+          <li>NotreDame Intermédica</li>
+        </ul>
+        <p class="convenios__nota">Não encontrou seu convênio? <a href="#contato">Fale com nossa equipe</a> para verificar a cobertura.</p>
+      </div>
+    </section>
+
+    <!-- ===================== LOCALIZAÇÃO ===================== -->
+    <section id="localizacao" class="localizacao" aria-labelledby="titulo-localizacao">
+      <div class="secao__container localizacao__grid">
+        <div class="localizacao__info">
+          <h2 id="titulo-localizacao">Como chegar</h2>
+          <p class="secao__intro">
+            Estamos em um prédio térreo, com rampas de acesso, elevador adaptado e
+            vagas de estacionamento reservadas próximas à entrada.
+          </p>
+          <address class="localizacao__endereco">
+            <p><strong>Endereço:</strong> Rua do caju</p>
+            <p><strong>Referência:</strong> Perto da quadra</p>
+          </address>
+          <a class="botao botao--secundario"
+             href="https://www.google.com/maps/search/?api=1&query=Rua+das+Ac%C3%A1cias+250+Centro+Salvador+BA"
+             target="_blank" rel="noopener noreferrer">
+            Abrir no Google Maps <span class="sr-only">(abre em nova aba)</span>
+          </a>
+        </div>
+
+        <div class="localizacao__mapa">
+          <iframe 
+            title="Mapa interativo com a localização da Clínica Saúde para Todos"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d971.9686139809288!2d-39.238962730383186!3d-12.979880692370141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1787948020349!5m2!1spt-BR!2sbr" 
+            width="100%" 
+            height="100%" 
+            style="border:0; min-height: 18rem; border-radius: var(--raio-borda);" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FORMULÁRIO DE AGENDAMENTO ===================== -->
+    <section id="contato" class="agendamento" aria-labelledby="titulo-agendamento">
+      <div class="secao__container">
+        <h2 id="titulo-agendamento">Agende sua consulta</h2>
+        <p class="secao__intro">
+          Preencha o formulário abaixo e nossa equipe entrará em contato para confirmar o
+          melhor horário. Conte para nós qualquer necessidade específica — estamos prontos para acolher.
+        </p>
+
+        <form id="form-agendamento" class="formulario" novalidate>
+
+          <fieldset class="formulario__grupo">
+            <legend>Seus dados</legend>
+            <div class="formulario__campos">
+              <div class="campo">
+                <label for="campo-nome">Nome completo <span class="campo__obrigatorio" aria-hidden="true">*</span></label>
+                <input type="text" id="campo-nome" name="nome" autocomplete="name" required aria-required="true">
+              </div>
+
+              <div class="campo">
+                <label for="campo-telefone">Telefone / WhatsApp <span class="campo__obrigatorio" aria-hidden="true">*</span></label>
+                <input type="tel" id="campo-telefone" name="telefone" autocomplete="tel"
+                       placeholder="(00) 00000-0000" required aria-required="true">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="formulario__grupo">
+            <legend>Sobre a consulta</legend>
+            <div class="formulario__campos">
+              <div class="campo">
+                <label for="campo-especialidade">Especialidade desejada <span class="campo__obrigatorio" aria-hidden="true">*</span></label>
+                <select id="campo-especialidade" name="especialidade" required aria-required="true">
+                  <option value="">Selecione uma opção</option>
+                  <option value="geriatria">Geriatria</option>
+                  <option value="neurologia">Neurologia</option>
+                  <option value="ortopedia">Ortopedia e Reabilitação</option>
+                  <option value="oftalmologia">Oftalmologia</option>
+                  <option value="fonoaudiologia">Fonoaudiologia</option>
+                  <option value="psicologia">Psicologia</option>
+                  <option value="outra">Outra / não sei ainda</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label for="campo-acessibilidade">Necessidades específicas de acessibilidade</label>
+                <p class="campo__ajuda" id="ajuda-acessibilidade">
+                  Ex.: intérprete de Libras, apoio para mobilidade, acompanhante, cão-guia, entre outras.
+                </p>
+                <textarea id="campo-acessibilidade" name="acessibilidade" rows="4"
+                          aria-describedby="ajuda-acessibilidade"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="botao botao--primario">Enviar solicitação de agendamento</button>
+
+          <p id="status-formulario" class="formulario__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="rodape">
+    <div class="secao__container rodape__grade">
+      <div class="rodape__bloco">
+        <h2 class="sr-only">Informações de contato</h2>
+        <p class="rodape__logo"><span aria-hidden="true">✚</span> Saúde <strong>para Todos</strong></p>
+        <p>Clínica de Especialidades comprometida com um atendimento acolhedor e sem barreiras.</p>
+      </div>
+
+      <div class="rodape__bloco">
+        <h3>Contato</h3>
+        <address class="rodape__endereco">
+          <p>Rua das Acácias, 250 — Centro, Salvador/BA</p>
+          <p>Telefone: <a href="tel:+557133334444">(71) 3333-4444</a></p>
+          <p>E-mail: <a href="mailto:contato@saudeparatodos.com.br">contato@saudeparatodos.com.br</a></p>
+        </address>
+      </div>
+
+      <div class="rodape__bloco">
+        <h3>Horário de Atendimento</h3>
+        <p>Segunda a sexta: 7h às 19h</p>
+        <p>Sábado: 8h às 12h</p>
+      </div>
+
+      <div class="rodape__bloco">
+        <h3>Privacidade</h3>
+        <ul class="rodape__lista-legal">
+          <li><a href="privacidade">Política de Privacidade</a></li>
+          <li><a href="termos">Termos de Uso</a></li>
+          <li><a href="privacidade#termos-lgpd">Termos de Consentimento (LGPD)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape__base">
+      <p>&copy; 2026 Clínica Saúde para Todos. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== BOTÃO FLUTUANTE WHATSAPP ===================== -->
+  <a class="whatsapp-flutuante"
+     href="https://wa.me/5571999998888?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Sa%C3%BAde%20para%20Todos."
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Agendar consulta pelo WhatsApp (abre em nova aba)">
+    <span aria-hidden="true" class="whatsapp-flutuante__icone">
+      <svg viewBox="0 0 32 32" width="28" height="28" focusable="false" aria-hidden="true">
+        <path fill="currentColor" d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9c1.8 1 3.9 1.6 6.3 1.6 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-3.9-.5-5.6-1.5l-.4-.2-4.6 1.2 1.2-4.5-.3-.4C5.2 17.8 4.7 16.4 4.7 15c0-6.2 5.1-11.3 11.3-11.3S27.3 8.8 27.3 15 22.2 24.8 16 24.8zm6.2-8.4c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.8.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.2-.2.3-.4.5-.6.2-.2.2-.3.3-.6.1-.2.1-.5 0-.6-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.6 5.7 5.1.8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-.8 2.2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/>
+      </svg>
+    </span>
+    <span class="sr-only">Agendar consulta pelo WhatsApp</span>
+  </a>
+
+  <!-- Widget Oficial VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <script src="script.min.js"></script>
+</body>
+</html>
