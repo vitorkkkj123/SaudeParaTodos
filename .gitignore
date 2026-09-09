@@ -1,0 +1,11 @@
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Configurações do VS Code / IDEs
+.vscode/
+.idea/
+
+# Logs e arquivos temporários
+*.log
+.vercel
